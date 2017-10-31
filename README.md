@@ -10,7 +10,7 @@
 
 ### 目录说明
 
-- leetcode                      leetcode题目, 可能包含部分解题报告
-- mysite                          django
-- python_cookbook    <python cookbook> 代码
+- [leetcode]                                            leetcode题目, 可能包含部分解题报告
+- [mysite]                                               django
+- [python_cookbook]                           'python cookbook' 代码
 
