@@ -93,5 +93,5 @@ docker build -t atlantisfox/aria2 .
 运行基于该镜像的容器
 
 ```
-docker run -d -p 6800:6800 -p 6801:6801 -v /Users/binss/Downloads/aria2:/home/binss/downloads --name="aria2" binss/aria2
+docker run -d -p 6800:6800 -p 6801:6801 -v /Users/atlantisfox/Downloads/aria2:/home/atlantisfox/downloads --name="aria2" atlantisfox/aria2
 ```
