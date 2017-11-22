@@ -1,6 +1,10 @@
 from collections import deque
 from itertools import dropwhile, permutations, chain
+from collections import Iterable
 import itertools
+import heapq
+import sys
+
 
 
 
@@ -109,6 +113,39 @@ class Iter(object):
             print(x)
 
 
+# 4.14 展开嵌套序列
+def flatten(items, ignore_types=(str, bytes)):
+    for x in items:
+        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
+            yield from flatten(x)
+        else:
+            yield xj
+
+
+def call_flatten():
+    items = [1, 2, [3, 4, [5, 6], 7], 8]
+    for x in flatten(items):
+        print(x, end=' ')
+
+
+# 4.15 这就是归并
+def call_merge():
+    a = [1, 4, 7, 10]
+    b = [2, 5, 6, 11]
+
+    for i in heapq.merge(a, b):
+        print(i, end='')
+
+    # c = heapq.merge(a, b)     # c is a generator
+    # print(c)
+
+
+# 4.16 迭代器代替while无限循环
+def call_iter():
+    f = open('14.input')
+    for chunk in iter(lambda: f.read(10), ''):
+        n = sys.stdout.write(chunk)
+
 
 def call_frange():
     for i in frange(0, 4, 0.5):
@@ -150,4 +187,10 @@ if __name__ == '__main__':
 
     # Iter.meth()
 
-    Iter.meth0()
+    # Iter.meth0()
+
+    # call_flatten()
+
+    # call_merge()
+
+    call_iter()
